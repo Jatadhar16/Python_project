@@ -1,0 +1,42 @@
+<section class="contact mt-5 mb-5">
+    <div class="blueScreen py-5">
+        <div class="container my-5 bg-white">
+            <div class="row p-5">
+                <div class="col-lg-6">
+                    <div class="">
+                        <h2 class="mb-5">Send Message Us</h2>
+                        <form [formGroup]="contactForm" (ngSubmit)="getForm(contactForm)">
+                            <div class="form-group mb-4">
+                                <input formControlName="name" type="text" class="form-control rounded-0" placeholder="Your Name">
+                            </div>
+                            <div class="form-group mb-4">
+                                <input formControlName="email" type="text" class="form-control rounded-0" placeholder="Your Email">
+                            </div>
+                            <div class="form-group mb-4">
+                                <textarea class="form-control rounded-0" rows="3" placeholder="Message"></textarea>
+                            </div>
+                            <button type="submit" [disabled]="contactForm.status == 'INVALID'" class="btn btn-primary btn-lg rounded-pill mx-auto mb-5">Send Message</button>
+                        </form>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="">
+                        <h2 class="mb-5">Get in Touch</h2>
+                        <p class="para300">Lorem ipsum dolor sit amet consectetur adipisicing elit. Facilis dolorum dolorem soluta quidem expedita aperiam aliquid at. Totam magni ipsum suscipit amet? Autem nemo esse laboriosam ratione nobis mollitia inventore?</p>
+                        <ul class="fa-ul">
+                            <li><span class="fa-li"><i class="fas fa-map-marker-alt"></i></span>329 WASHINGTON ST BOSTON, MA 02108</li>
+                            <li><span class="fa-li"><i class="fas fa-phone-alt"></i></span>(617) 557-0089</li>
+                            <li><span class="fa-li"><i class="fas fa-envelope"></i></span>contact@example.com</li>
+                        </ul>
+                        <div class="icons">
+                            <a href="#"><i class="fab fa-facebook-f"></i></a>
+                            <a href="#"><i class="fab fa-instagram"></i></a>
+                            <a href="#"><i class="fab fa-twitter"></i></a>
+                            <a href="#"><i class="fab fa-pinterest"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

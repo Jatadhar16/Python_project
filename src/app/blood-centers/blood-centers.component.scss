@@ -1,0 +1,64 @@
+.bloodCenters h2 {
+    font-weight: 700;
+    font-size: 38px;
+    line-height: 49px;
+    letter-spacing: -1;
+    color: #1f1f1f;
+    position: relative;
+}
+.bloodCenters h2::before {
+    content: "C";
+    color: #e5e5e5;
+    position: absolute;
+    font-size: 78px;
+    top: -25%;
+    left: 47.5%;
+    z-index: -1;
+}
+.bloodCenters h4 {
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 23px;
+    color: #787878;
+}
+.bloodCenters .carrier {
+    position: relative;
+    overflow: hidden;
+}
+.bloodCenters .carrier .img-caption {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(2, 2, 2, 0.7);
+    top: 0px;
+    left: 0px;
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out;
+    color: white !important;
+}
+.bloodCenters .carrier:hover .img-caption {
+    opacity: 1;
+    animation: move 1s;
+    transition: animation 1s ease-in-out;
+}
+@keyframes move {
+    from{top:10%;}
+    to{top:0;}
+}
+.bloodCenters a {
+    font-size: 16px;
+    color: white;
+}
+.bloodCenters a:hover {
+    text-shadow: 0 0 5px white;
+}
+.bloodCenters h5 {
+    font-weight: 600;
+    font-size: 13px;
+    line-height: 17px;
+}
+.bloodCenters span {
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 18px;
+}

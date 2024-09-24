@@ -1,0 +1,50 @@
+#particles {
+    min-height: 100vh;
+    background-color: #222;
+}
+.chat {
+    position: relative;
+    height: 100vh;
+}
+.chat .chatBox {
+    position: absolute;
+    top: 22%;
+    right: 25%;
+    width: 50%;
+    height: 60vh;
+    box-shadow: 1px 1px 5px 6px rgba(204,204,204,0.5);
+}
+.chat .chatBox .head {
+    height: 20%;
+}
+.chat .chatBox .conversation {
+    height: 80%;
+}
+.chat .chatBox .conversation .conBody {
+    height: 80%;
+}
+.chat .chatBox .conversation .conBody img {
+    border-radius: 50%;
+}
+.chat .chatBox .conversation .conBody .message {
+    border: 1px solid #ccc;
+}
+.chat .chatBox .conversation form {
+    height: 20%;
+}
+.chat .chatBox .conversation input {
+    box-shadow: 1px 1px 5px 6px rgba(204,204,204,0.3);
+    transition-duration: 0.5s;
+}
+.chat .chatBox .conversation button {
+    color: white;
+    background-color: transparent;
+    border: none;
+    transition-duration: 0.5s;
+}
+.chat .chatBox .conversation button:hover {
+    color: black;
+    background-color: #ccc;
+    border: none;
+    box-shadow: 1px 1px 5px 6px rgba(204,204,204,0.3);
+}

@@ -1,0 +1,44 @@
+<section id="particles" class="chat">
+    <div class="chatBox">
+        <div class="head text-white py-3 px-1">
+            <h3 class="specfont">Chat Bot <i class="fas fa-comment-dots"></i></h3>
+        </div>
+        <div class="conversation">
+            <div class="conBody bg-white p-2">
+                <div class="w-100 mb-3 p-2">
+                    <div class="row">
+                        <div class="col-md-2">
+                            <img class="h-100 img-fluid" src="{{senderPic}}">
+                        </div>
+                        <div class="message col-md-8">
+                            <p class="bg-white">{{this.message}}</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="w-100 p-2">
+                    <div class="row">
+                        <div class="message offset-md-2 col-md-8">
+                            <p class="bg-white">{{this.reply}}</p>
+                        </div>
+                        <div class="col-md-2">
+                            <img class="img-fluid" src="../../assets/images/bot.jpg">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <form [formGroup]="chatForm" (ngSubmit)="chat(chatForm)" class="overflow-hidden p-3">
+                <div class="form-group row">
+                    <div class="col-md-10">
+                      <input formControlName="message" type="text" class="form-control" placeholder="Text Message">
+                    </div>
+                    <div class="col-md-1">
+                      <button type="reset"><i class="far fa-trash-alt"></i></button>
+                    </div>
+                    <div class="col-md-1">
+                      <button type="submit"><i class="fas fa-paper-plane"></i></button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</section>

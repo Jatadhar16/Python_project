@@ -1,0 +1,16 @@
+<div id="particles">
+    <section class="container switch w-25">
+        <a class="mt-1 text-white" routerLink="/signup">Don't Have Account ?</a>
+    </section>
+    <section class="container login">
+        <form [formGroup]="loginForm" (ngSubmit)="getForm(loginForm)" class="row d-flex justify-content-center">
+          <input formControlName="email" type="email" class="col-md-6 mr-4 mt-3" placeholder="Enter Email">
+          <p class="alert alert-danger col-md-5 text-center" *ngIf="loginForm.get('email').status == 'INVALID' && loginForm.get('email').touched">Please Enter A Valid Email</p>
+          <input formControlName="password" type="password" class="col-md-6 mr-4 mt-3" placeholder="Enter Password">
+          <p class="alert alert-danger col-md-5 text-center" *ngIf="loginForm.get('password').status == 'INVALID' && loginForm.get('password').touched">Password Starts With Lowercase Letter Then Numbers</p>
+          <div class="col-md-12 d-flex justify-content-center">
+              <button type="submit" [disabled]="loginForm.status == 'INVALID'" class="btn btn-outline-light text-center mr-3 mt-4">Login</button>
+          </div>
+        </form>
+    </section> 
+</div>

@@ -1,0 +1,50 @@
+<nav class="mynavbar py-3 navbar navbar-expand-md" [ngClass]="navColor">
+  <div class="container">
+    <a class="navbar-brand specfont logo" href="#">REVIVE</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto">
+        <li *ngIf="isLogin && !isEmp && !isAdmin" class="nav-item mx-2">
+          <a class="nav-link poppfont onelink" routerLink="/home" routerLinkActive="active">Home</a>
+        </li>
+        <li *ngIf="isLogin" class="nav-item mx-2">
+          <a class="nav-link poppfont onelink" routerLink="/about" routerLinkActive="active">About</a>
+        </li>
+        <li *ngIf="isLogin" class="nav-item mx-2">
+          <a class="nav-link poppfont onelink" routerLink="/bloodCenters" routerLinkActive="active">Blood Centers</a>
+        </li>
+        <li *ngIf="isLogin" class="nav-item mx-2">
+          <a class="nav-link poppfont onelink" routerLink="/contact" routerLinkActive="active">Contact Us</a>
+        </li>
+        <li *ngIf="!isLogin" class="nav-item mx-2">
+          <a class="nav-link poppfont onelink" routerLink="/login" routerLinkActive="active">Login</a>
+        </li>
+        <li class="nav-item mx-2">
+          <a class="nav-link poppfont onelink" routerLink="/covid" routerLinkActive="active">COVID19</a>
+        </li>
+        <li *ngIf="isLogin && isEmp" class="nav-item mx-2">
+          <a class="nav-link poppfont onelink" routerLink="/hospitalmanage" routerLinkActive="active">Hospitals</a>
+        </li>
+        <li *ngIf="isLogin && isAdmin" class="nav-item mx-2">
+          <a class="nav-link poppfont onelink" routerLink="/employeedetails" routerLinkActive="active">Employees</a>
+        </li>
+        <li *ngIf="isLogin && isAdmin || isEmp" class="nav-item mx-2">
+          <a class="nav-link poppfont onelink" routerLink="/dashboard" routerLinkActive="active">Dashboard</a>
+        </li>
+        <li><a href="#"><i class="icon fab fa-facebook-f fa-lg p-2"></i></a></li>
+        <li><a href="#"><i class="icon fab fa-twitter fa-lg p-2"></i></a></li>
+        <li *ngIf="isLogin" class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"></a>
+          <div class="dropdown-menu" [ngClass]="navColor" aria-labelledby="navbarDropdown">
+            <a class="dropdown-item poppfont" routerLink="/profile"><i class="fas fa-user"></i> Profile</a>
+            <a *ngIf="!isEmp && !isAdmin" class="dropdown-item poppfont" routerLink="/botChat"><i class="fas fa-comments"></i> Chat Bot</a>
+            <div class="dropdown-divider"></div>
+            <a class="dropdown-item poppfont" href="#" (click)="logout()"><i class="fas fa-door-open"></i> Log out</a>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>

@@ -1,0 +1,22 @@
+<div id="particles">
+    <section class="container switch w-25">
+        <a class="mt-1 text-white" routerLink="/login">Or, Have Already Account ?</a>
+    </section>
+    <section class="container signup">
+        <form [formGroup]="signupForm" (ngSubmit)="getForm(signupForm)" class="row d-flex justify-content-center">
+            <input formControlName="name" type="text" class="col-md-5 mr-4 mt-3" placeholder="Enter Your Name">
+            <p class="alert alert-danger col-md-5 text-center" *ngIf="signupForm.get('name').status == 'INVALID' && signupForm.get('name').touched">Please Enter A Valid Name From 2 To 12 Characters</p>
+            <input formControlName="email" type="email" class="col-md-5 mr-4 mt-3" placeholder="Enter Your Email">
+            <p class="alert alert-danger col-md-5 text-center" *ngIf="signupForm.get('email').status == 'INVALID' && signupForm.get('email').touched">Please Enter A Valid Email</p>
+            <input formControlName="phoneNumber" type="text" class="col-md-5 mr-4 mt-3" placeholder="Enter Your Phone">
+            <p class="alert alert-danger col-md-5 text-center" *ngIf="signupForm.get('phoneNumber').status == 'INVALID' && signupForm.get('phoneNumber').touched">Please Enter A Valid Phone Number</p>
+            <input formControlName="age" type="text" class="col-md-5 mr-4 mt-3" placeholder="Enter Your Age">
+            <p class="alert alert-danger col-md-5 text-center" *ngIf="signupForm.get('age').status == 'INVALID' && signupForm.get('age').touched">Please Enter A Valid Age From 16 To 60 Years</p>
+            <input formControlName="password" type="password" class="col-md-5 mr-4 mt-3" placeholder="Enter A Password">
+            <p class="alert alert-danger col-md-5 text-center" *ngIf="signupForm.get('password').status == 'INVALID' && signupForm.get('password').touched">Password Starts With Lowercase Letter Then Numbers</p>
+            <div class="col-md-12 d-flex justify-content-center">
+                <button type="submit" [disabled]="signupForm.status == 'INVALID'" class="btn btn-outline-light text-center mr-3 mt-4">Sign Up</button>
+            </div>
+        </form>
+    </section> 
+</div>

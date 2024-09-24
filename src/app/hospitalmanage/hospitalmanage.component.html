@@ -1,0 +1,112 @@
+<section class="pt-5 mt-5">
+    <div class="container">
+      <div class="intro row my-5">
+        <h2 class="headfont col-md-4">Manage Hospitals</h2>
+        <div class="col-md-3 offset-5">
+          <button class="btn btn-success poppfont" data-toggle="modal" data-target="#addHosModal"><i class="fas fa-plus-circle"></i> Add New Hospital</button>
+        </div>
+      </div>
+      <!-- Add Hospital Modal -->
+      <div class="modal fade" id="addHosModal" tabindex="-1" aria-labelledby="addHosModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="addHosModalLabel">Add Hospital</h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+              <form [formGroup]="addHosForm" (ngSubmit)="getForm(addHosForm)" class="row d-flex justify-content-center">
+                <input formControlName="name" type="text" class="col-md-5 mr-4 mt-3" placeholder="Enter Hospital Name">
+                <input formControlName="location" type="text" class="col-md-5 mr-4 mt-3" placeholder="Enter Hospital Location">
+                <input formControlName="phoneNumber" type="text" class="col-md-5 mr-4 mt-3" placeholder="Enter Hospital Phone">
+                <input formControlName="description" type="text" class="col-md-5 mr-4 mt-3" placeholder="Enter Hospital Description">
+                <input formControlName="leet" type="text" class="col-md-5 mr-4 mt-3" placeholder="Enter Hospital Let">
+                <input formControlName="lang" type="text" class="col-md-5 mr-4 mt-3" placeholder="Enter Hospital Lang">
+                <input formControlName="webURL" type="text" class="col-md-7 mr-4 mt-3" placeholder="Enter Hospital Website URL">
+                <div class="modal-footer col-md-12 mt-4">
+                  <button type="submit" [disabled]="addHosForm.status == 'INVALID'" class="btn btn-success">Submit</button>
+                  <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- List All Hospitals -->
+      <table class="table-hover table-sm poppfont">
+          <thead class="mb-5">
+            <tr class="text-center">
+              <th scope="col">Update</th>
+              <th scope="col">Delete</th>
+              <th scope="col">Hospital ID</th>
+              <th scope="col">Name</th>
+              <th scope="col">Description</th>
+              <th scope="col">Location</th>
+              <th scope="col">Phone</th>
+              <th scope="col">Rate</th>
+              <th scope="col">Picture</th>
+              <th scope="col">Let</th>
+              <th scope="col">Lang</th>
+              <th scope="col">Website URL</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let oneHos of allHos" class="text-center">
+              <td><a (click)="updateHos(oneHos._id)" data-toggle="modal" data-target="#updateHosModal"><i class="mr-2 fas fa-pen text-warning fa-2x"></i></a></td>
+              <td><a (click)="deleteHos(oneHos._id)"><i class="fas fa-trash-alt text-danger fa-2x"></i></a></td>
+              <td>{{oneHos._id}}</td>
+              <td>{{oneHos.name}}</td>
+              <td>{{oneHos.description}}</td>
+              <td>{{oneHos.location}}</td>
+              <td>{{oneHos.phoneNumber}}</td>
+              <td>{{oneHos.rate}}</td>
+              <td><img class="img-fluid" src="{{oneHos.picture}}"></td>
+              <td>{{oneHos.leet}}</td>
+              <td>{{oneHos.lang}}</td>
+              <td>{{oneHos.webURL}}</td>
+            </tr>
+          </tbody>
+      </table>
+    </div>
+
+    <!-- Update Hospital Modal -->
+    <div class="modal fade" id="updateHosModal" tabindex="-1" aria-labelledby="updateHosModalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="updateHosModalLabel">Update Hospital</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <form [formGroup]="updateHosForm" (ngSubmit)="getUpdatedForm(updateHosID, updateHosForm)" class="row d-flex justify-content-center">
+              <label class="col-md-4 mr-4 mt-3">Hospital Name:</label>
+              <input formControlName="name" type="text" class="col-md-6 mr-4 mt-3">
+              <label class="col-md-4 mr-4 mt-3">Hospital Location:</label>
+              <input formControlName="location" type="text" class="col-md-6 mr-4 mt-3">
+              <label class="col-md-4 mr-4 mt-3">Hospital phone:</label>
+              <input formControlName="phoneNumber" type="text" class="col-md-6 mr-4 mt-3">
+              <label class="col-md-4 mr-4 mt-3">Hospital Description:</label>
+              <input formControlName="description" type="text" class="col-md-6 mr-4 mt-3">
+              <label class="col-md-4 mr-4 mt-3">Hospital Picture:</label>
+              <input formControlName="picture" type="text" class="col-md-6 mr-4 mt-3">
+              <label class="col-md-4 mr-4 mt-3">Hospital Leet:</label>
+              <input formControlName="leet" type="text" class="col-md-6 mr-4 mt-3">
+              <label class="col-md-4 mr-4 mt-3">Hospital Lang:</label>
+              <input formControlName="lang" type="text" class="col-md-6 mr-4 mt-3">
+              <label class="col-md-4 mr-4 mt-3">Hospital Website URL:</label>
+              <input formControlName="webURL" type="text" class="col-md-6 mr-4 mt-3">
+              <div class="modal-footer col-md-12 mt-4">
+                <button type="submit" [disabled]="updateHosForm.status == 'INVALID'" class="btn btn-success">Submit</button>
+                <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+</section>

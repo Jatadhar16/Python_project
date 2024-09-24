@@ -1,0 +1,49 @@
+.mynavbar {
+    background-color: transparent;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 99;
+}
+.mynavbar a {
+    text-decoration: none;
+    color: white;
+}
+.mynavbar .logo {
+    font-size: 30px;
+    text-shadow: 0 0 5px white;
+}
+.mynavbar .onelink {
+    font-size: 15px;
+    position: relative;
+}
+.mynavbar .icon {
+    color: white;
+    transition: 0.3s ease-in-out;
+}
+.mynavbar .icon:hover {
+    text-shadow: 0 0 5px white;
+}
+.mynavbar .dropdown-menu {
+    left: -200% !important;
+}
+.mynavbar .dropdown-menu a:hover {
+    color: #023351;
+}
+@keyframes line {
+    from{width: 0%;}
+    to{width: 75%;}
+}
+.mynavbar .onelink::after {
+    content: "";
+    position: absolute;
+    background-color: white;
+    top: 100%;
+    left: 0;
+    width: 0%;
+    height: 2.5px;
+}
+.mynavbar .onelink:hover::after {
+    animation: line 1s;
+    width: 75%;
+}

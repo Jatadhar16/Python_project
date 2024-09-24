@@ -1,0 +1,93 @@
+<section class="bg-light pt-5 mt-5 container">
+    <div class="row">
+        <div class="col-md-3">
+            <div class="">
+                <img class="img-fluid" src="{{cProfilePicture}}">
+                <div class="line my-4"></div>
+                <div class="media">
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="offset-1 col-md-7">
+            <div class="">
+                <div class="info">
+                    <h3 class="headfont">{{cProfileName}}</h3>
+                    <p class="subtitle poppfont"><i class="fas fa-map-marker-alt text-success"></i> {{cProfileAddress}}</p>
+                    <!-- <div class="blood-revive">
+                        <p>Donation 
+                            <i class="fas fa-star text-warning"></i>
+                            <i class="fas fa-star text-warning"></i>
+                            <i class="fas fa-star text-warning"></i>
+                            <i class="fas fa-star text-warning"></i>
+                            <i class="far fa-star text-warning"></i>
+                        </p>
+                    </div> -->
+                </div>
+                <div class="moreInfo">
+                    <ul class="nav nav-tabs" id="myTab" role="tablist">
+                        <li class="nav-item" role="presentation">
+                          <a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true"><i class="far fa-eye"></i> About</a>
+                        </li>
+                        <li class="nav-item" role="presentation">
+                          <a class="nav-link" id="profile-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile" aria-selected="false"><i class="fas fa-user"></i> Timeline</a>
+                        </li>
+                        <!-- <li class="nav-item" role="presentation">
+                          <a class="nav-link" id="contact-tab" data-toggle="tab" href="#contact" role="tab" aria-controls="contact" aria-selected="false"><i class="fas fa-hand-holding-medical"></i> Donation</a>
+                        </li> -->
+                    </ul>
+                    <div class="tab-content" id="myTabContent">
+                    <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
+                        <div class="p-4">
+                            <p class="poppfont"><span class="text-primary">E-Mail:</span> {{cProfileEmail}}</p>
+                            <p class="poppfont"><span class="text-primary">Age:</span> {{cProfileAge}}</p>
+                            <p class="poppfont"><span class="text-primary">Phone Number:</span> {{cProfilePhoneNumber}}</p>
+                            <button type="button" (click)="updateProfile()" class="btn btn-outline-success" data-toggle="modal" data-target="#editModal">Edit</button>
+                        </div>
+                    </div>
+                    <div class="tab-pane fade p-4" id="profile" role="tabpanel" aria-labelledby="profile-tab">
+                        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Dignissimos dolorum magnam ex alias mollitia hic eveniet quas nobis quos quaerat!</p>
+                    </div>
+                    <!-- <div class="tab-pane fade" id="contact" role="tabpanel" aria-labelledby="contact-tab">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, eum.</div> -->
+                    </div>
+                </div>
+                
+                <!-- Edit Profile Modal -->
+                <div class="modal fade" id="editModal" tabindex="-1" aria-labelledby="editModalLabel" aria-hidden="true">
+                    <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                        <h5 class="modal-title" id="editModalLabel">Edit Profile</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                        </div>
+                        <div class="modal-body">
+                            <form [formGroup]="updateProfileForm" (ngSubmit)="getUpdatedForm(cProfileID, updateProfileForm)" class="row d-flex justify-content-center">
+                                <label class="col-md-4 mr-4 mt-3">Name:</label>
+                                <input formControlName="name" type="text" class="col-md-6 mr-4 mt-3">
+                                <label class="col-md-4 mr-4 mt-3">Address:</label>
+                                <input formControlName="address" type="text" class="col-md-6 mr-4 mt-3">
+                                <label class="col-md-4 mr-4 mt-3">E-Mail:</label>
+                                <input formControlName="email" type="text" class="col-md-6 mr-4 mt-3">
+                                <label class="col-md-4 mr-4 mt-3">Age:</label>
+                                <input formControlName="age" type="text" class="col-md-6 mr-4 mt-3">
+                                <label class="col-md-4 mr-4 mt-3">Phone:</label>
+                                <input formControlName="phoneNumber" type="text" class="col-md-6 mr-4 mt-3">
+                                <label class="col-md-4 mr-4 mt-3">Picture:</label>
+                                <input formControlName="picture" type="text" class="col-md-6 mr-4 mt-3">
+                                <div class="modal-footer col-md-12 mt-4">
+                                    <button type="submit" [disabled]="updateProfileForm.status == 'INVALID'" class="btn btn-success">Save</button>
+                                    <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

@@ -1,0 +1,56 @@
+<!-- Intro -->
+
+<section class="intro d-flex justify-content-center align-items-end">
+    <div class="caption w-50 h-75 text-center">
+        <h1 class="specfont mb-5 text-white">Revive</h1>
+        <p class="poppfont mb-5 pb-5 text-white">Join REVIVE Save A Life</p>
+        <div class="scroller mt-5">
+            <div class="ball"></div>
+        </div>
+    </div>
+</section>
+
+<!-- Content -->
+
+<section id="content" class="content container">
+    <form [formGroup]="searchLocationForm" (ngSubmit)="getForm(searchLocationForm)" class="form-inline my-5 raw">
+        <!-- <div class="col-md-5 p-2">
+            <input" class="form-control w-100" type="search" placeholder="Search By Name" aria-label="Search">
+        </div>
+        <div class="col-md-1 p-2">
+            <button class="btn btn-outline-primary w-100 my-2 my-sm-0" type="submit">Search</button>
+        </div> -->
+        <div class="col-md-5 p-2">
+            <input formControlName="keyword" class="form-control w-100" type="text" placeholder="Filter By Location" aria-label="Search">
+        </div>
+        <div class="col-md-1 p-2">
+            <button class="btn btn-outline-primary w-100 my-2 my-sm-0" [disabled]="searchLocationForm.status == 'INVALID'" type="submit">Filter</button>
+        </div>
+    </form>
+    
+    <div class="contentcards row">
+        <div class="col-md-4 mb-5 " *ngFor="let oneHos of allHos">
+            <div class="card">
+                <div class="bphoto">
+                    <img src="{{oneHos.picture}}">
+                </div>
+                <div class="bcontent">
+                    <h6 class="specfont"><a href="#">{{oneHos.name}}</a></h6>
+                    <h4 class="headfont">{{oneHos.description}}</h4>
+                    <span class="poppfont">
+                        <a [routerLink]="['/hospitaldetails' , oneHos._id]">More Info</a>
+                    </span>
+                </div>
+            </div>
+        </div>
+        <!-- <div *ngFor="let oneMovie of homeDataMovies | filtermovies : tirm" class="col-md-2">
+            <div class="position-relative" [routerLink]="['/moviedetails' , oneMovie.id]">
+                <img [src]="imgPath+oneMovie.poster_path" class="img-fluid" >
+                <h2 class="h6"> {{oneMovie.title }} </h2>
+
+                <span class="vote p-1 position-absolute" >{{oneMovie.vote_average}}</span>
+
+            </div>
+        </div> -->
+    </div>
+</section>

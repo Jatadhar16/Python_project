@@ -1,0 +1,189 @@
+
+/* About */
+
+.about {
+    border-bottom: 1px solid #ccc;
+}
+.about h6 {
+    font-weight: 500;
+    font-size: 3rem;
+    line-height: 3rem;
+    color: #1f1f1f;
+}
+.about p {
+    font-weight: 300;
+    font-size: 24px;
+    line-height: 36px;
+    color: #787878;
+}
+.about span {
+    font-weight: 400;
+    font-size: 24px;
+    line-height: 36px;
+    color: #787878;
+}
+.about span::before {
+    color: #00c3da;
+    content: "";
+    animation: lettering 5s infinite;
+}
+@keyframes lettering {
+    0%{content:"a"}
+    2%{content:"ap"}
+    4%{content:"app"}
+    6%{content:"apps"}
+    8%{content:"apps"}
+    10%{content:"apps"}
+    12%{content:"app"}
+    14%{content:"ap"}
+    16%{content:"a"}
+    18%{content:""}
+    20%{content:"W"}
+    22%{content:"We"}
+    24%{content:"Web"}
+    26%{content:"Webs"}
+    28%{content:"Websi"}
+    30%{content:"Websit"}
+    32%{content:"Website"}
+    34%{content:"Websites"}
+    36%{content:"Websites"}
+    38%{content:"Websites"}
+    40%{content:"Website"}
+    42%{content:"Websit"}
+    44%{content:"Websi"}
+    46%{content:"Webs"}
+    48%{content:"Web"}
+    50%{content:"We"}
+    52%{content:"W"}
+    54%{content:""}
+    56%{content:"s"}
+    58%{content:"so"}
+    60%{content:"sof"}
+    62%{content:"soft"}
+    64%{content:"softw"}
+    66%{content:"softwa"}
+    68%{content:"softwar"}
+    70%{content:"software"}
+    72%{content:"softwares"}
+    74%{content:"softwares"}
+    76%{content:"softwares"}
+    78%{content:"software"}
+    80%{content:"softwar"}
+    82%{content:"softwa"}
+    84%{content:"softw"}
+    86%{content:"soft"}
+    88%{content:"sof"}
+    90%{content:"so"}
+    92%{content:"s"}
+    94%{content:""}
+}
+.about button {
+    font-weight: 500;
+    font-size: 11px;
+    border-radius: 0;
+    border-color: #ccc;
+}
+
+/* Team */
+
+.team h2 {
+    font-weight: 700;
+    font-size: 38px;
+    line-height: 49px;
+    letter-spacing: -1;
+    color: #1f1f1f;
+    position: relative;
+}
+.team h2::before {
+    content: "C";
+    color: #e5e5e5;
+    position: absolute;
+    font-size: 78px;
+    top: -25%;
+    left: 47.5%;
+    z-index: -1;
+}
+.team h4 {
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 23px;
+    color: #787878;
+}
+.team .carrier {
+    position: relative;
+    overflow: hidden;
+}
+.team .carrier .img-caption {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 195, 218, 0.9);
+    top: 0px;
+    left: 0px;
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out;
+    color: white !important;
+}
+.team .carrier:hover .img-caption {
+    opacity: 1;
+    animation: move 1s;
+    transition: animation 1s ease-in-out;
+}
+@keyframes move {
+    from{top:10%;}
+    to{top:0;}
+}
+.team a {
+    font-size: 16px;
+    color: white;
+}
+.team a:hover {
+    text-shadow: 0 0 5px white;
+}
+.team h5 {
+    font-weight: 600;
+    font-size: 13px;
+    line-height: 17px;
+}
+.team span {
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 18px;
+}
+
+/* Services */
+
+.services {
+    background-color: #0b4462;
+    z-index: 3;
+}
+.services .chevrons i {
+    color: #797979;
+}
+.services h4 {
+    font-weight: 600;
+    font-size: 13px;
+    line-height: 17px;
+    letter-spacing: 0.1em;
+}
+.services h2 {
+    font-weight: 700;
+    font-size: 38px;
+    line-height: 49px;
+    top: 26%;
+    left: 3.5%;
+}
+.services h3 {
+    font-weight: 700;
+    font-size: 75px;
+    line-height: 49px;
+    color: #797979;
+}
+.services p , .services li {
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 24px;
+}
+.services .far {
+    line-height: 24px !important;
+}

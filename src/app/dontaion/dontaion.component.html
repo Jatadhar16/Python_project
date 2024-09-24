@@ -1,0 +1,45 @@
+<section id="particles" class="donation">
+    <div class="donationBox">
+        <div class="head text-white py-3 px-3">
+            <h3 class="specfont mt-2">Fill This Form <i class="fas fa-comment-dots"></i></h3>
+        </div>
+        <form [formGroup]="donationForm" (ngSubmit)="getForm(donationForm)" class="overflow-hidden bg-white p-3 pt-5">
+            <div class="form-group mt-3 row">
+                <div class="col-md-10 px-5 mb-3">
+                    <input class="mx-5 w-100" formControlName="email" type="email" placeholder="Enter Your Email">
+                    <p class="alert alert-danger mx-5 w-100 text-center" *ngIf="donationForm.get('email').status == 'INVALID' && donationForm.get('email').touched">Please Enter A Valid Email</p>     
+                </div>
+                <div class="col-md-8 pl-5 mb-3">
+                    <label class="w-100 ml-5" for="bloodType">Choose Your Needed Blood Type A or AB or B or O : </label>
+                </div>
+                <div class="col-md-2 mb-3">
+                    <select class="w-100" id="bloodType" formControlName="bloodType" required>
+                        <option value="A">A</option>
+                        <option value="AB">AB</option>
+                        <option value="B">B</option>
+                        <option value="O">O</option>
+                    </select>
+                </div>
+                <div class="col-md-8 pl-5">
+                    <label class="w-100 ml-5" for="address">Select Your Current Hospital Location Or Nearby : </label>
+                </div>
+                <div class="col-md-2">
+                    <select class="w-100" id="address" formControlName="address" required>
+                        <option value="cairo">Cairo</option>
+                        <option value="alex">Alex</option>
+                        <option value="giza">Giza</option>
+                        <option value="fayoum">Fayoum</option>
+                        <option value="aswan">Aswan</option>
+                        <option value="matrouh">Marsa Matrouh</option>
+                        <option value="alamin">El Alamin</option>
+                        <option value="luxor">Luxor</option>
+                    </select>
+                </div>
+            </div>
+            <div class="col-md-10 px-5">
+                <button type="submit" [disabled]="donationForm.status == 'INVALID'" class="w-100 mx-5 btn btn-dark text-center mr-3 mt-4">Submit</button>
+            </div>
+        </form>
+    </div>
+</section>
+

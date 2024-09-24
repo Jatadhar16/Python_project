@@ -1,0 +1,69 @@
+.about {
+    display: flex;
+    justify-content: space-evenly;
+}
+.about .aphoto {
+    width: 40%;
+}
+.about .adesc {
+    width: 50%;
+}
+.about .adesc h2 {
+    color: #343434;
+    font-weight: 600 !important;
+}
+.about .adesc .desss {
+    color: #999;
+    margin: 3px 0 10px;
+}
+.about .adesc p {
+    color: #748182;
+}
+.about .adesc .progressbar {
+    background-color: #f7f7f7;
+    box-shadow: inset 0px 2px 3px 1px rgba(0, 0, 0, 0.6);
+    position: relative;
+    width: 100%;
+    height: 25px;
+    border-radius: 5px;
+    margin: 30px 0;
+}
+.about .adesc .progressperc {
+    background-color: #023351;
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 25px;
+    border-radius: 5px;
+}
+.about .adesc .progressperc p {
+    display: inline;
+    color: white;
+}
+.about .adesc .progressperc .p2 {
+    float: right;   
+}
+.about .adesc .webdesign {
+    width: 95%;
+}
+.about .adesc .branding {
+    width: 80%;
+}
+.about .adesc .development {
+    width: 90%;
+}
+.comments {
+    background-color: #f7f7f7;
+}
+.comments li {
+    border: 1px solid #999;
+    background-color: #e5e5e5;
+}
+.comments .others:hover {
+    border: 1px solid #343434;
+    background-color: #343434;
+    color: white;
+}
+.comments img {
+    border-radius: 50%;
+}

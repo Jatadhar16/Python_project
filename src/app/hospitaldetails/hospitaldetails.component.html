@@ -1,0 +1,78 @@
+<section class="about container pt-5 mt-5">
+    <div class="aphoto">
+        <img class="img-fluid" src="{{hosDetails.picture}}">
+    </div>
+    <div class="adesc">
+        <h2 class="headfont">{{hosDetails.name}}</h2>
+        <p class="poppfont subtitle desss">{{hosDetails.location}}</p>
+        <p class="poppfont">Our <b>Description: </b>{{hosDetails.description}}</p>
+        <div class="progressbar">
+            <div class="progressperc px-1 branding">
+                <p class="poppfont">Rating</p>
+                <p class="poppfont p2">{{hosDetails.rate}}</p>
+                <div class="clr"></div>
+            </div>
+        </div>
+        <button type="button" class="btn btn-primary py-2 px-4 poppfont mr-2" data-toggle="modal" data-target="#bookingModal">Book</button>
+        <button class="btn btn-outline-primary py-2 px-4 poppfont"><a target="blank" href="https://www.assih.com/ar/why-as-salam">Contact Us</a></button>
+        <!-- Comments -->
+        <div class="comments mt-4">
+          <ul class="list-unstyled py-4 px-5">
+            <li class="others media row mb-2 py-2" *ngFor="let oneReview of allReviews">
+              <img src="../../assets/images/comment.png" class="mr-3 col-md-2">
+              <div class="media-body col-md-10">
+                <h6 class="my-3">{{oneReview.comment}}</h6>
+              </div>
+            </li>
+            <li class="media row py-2">
+              <img src="../../assets/images/comment.png" class="mr-3 col-md-2">
+              <div class="media-body col-md-10">
+                <form class="row my-2 px-2" [formGroup]="addCommentForm" (ngSubmit)="addComment(addCommentForm)">
+                  <input required formControlName="comment" class="form-control col-md-8" type="text" placeholder="Write Comment ...">
+                  <button [disabled]="addCommentForm.status == 'INVALID'" type="submit" class="offset-1 col-md-3 btn btn-outline-dark">Comment</button>
+                </form>
+              </div>
+            </li>
+          </ul>
+        </div>
+    </div>
+  
+  <!-- Modal -->
+  <div class="modal fade" id="bookingModal" tabindex="-1" aria-labelledby="bookingModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="bookingModalLabel">{{hosDetails.name}}</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <table class="table table-hover">
+            <thead>
+              <tr>
+                <th scope="col">Department Name</th>
+                <th scope="col">Available Rooms</th>
+                <th scope="col">Most Price</th>
+                <th scope="col">Least Price</th>
+                <th scope="col">Book a Room</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let oneDep of allDep">
+                <td>{{oneDep.name}}</td>
+                <td>{{oneDep.availableRoom}}</td>
+                <td>{{oneDep.mostPrice}}</td>
+                <td>{{oneDep.leastPrice}}</td>
+                <td><a class="bookicon" (click)="booking(oneDep._id)"><i class="fab fa-medrt fa-2x"></i></a></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

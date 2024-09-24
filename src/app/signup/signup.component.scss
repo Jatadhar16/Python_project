@@ -1,0 +1,35 @@
+#particles {
+    min-height: 100vh;
+    background-color: #023351;
+}
+.switch {
+    position: absolute;
+    top: 64.3%;
+    left: 52%;
+    z-index: 5000;
+}
+.switch a:hover {
+    text-decoration: none;
+    text-shadow: 0 0 5px white;
+}
+.signup {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+.signup input {
+    background: transparent;
+    border: none;
+    border-bottom: 1px solid #f6f6f6;
+    text-align: center;
+    padding: 10px;
+    height: 40px;
+}
+.signup input:focus {
+    outline: none;
+    color: #999;
+}
+.signup button {
+    border-radius: 0% !important;
+}

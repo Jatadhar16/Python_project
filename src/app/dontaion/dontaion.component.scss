@@ -1,0 +1,22 @@
+#particles {
+    min-height: 100vh;
+    background-color: #222;
+}
+.donation {
+    position: relative;
+    height: 100vh;
+}
+.donation .donationBox {
+    position: absolute;
+    top: 22%;
+    right: 25%;
+    width: 50%;
+    height: 60vh;
+    box-shadow: 1px 1px 5px 6px rgba(204,204,204,0.5);
+}
+.donation .donationBox .head {
+    height: 20%;
+}
+.donation .donationBox form {
+    height: 80%;
+}
